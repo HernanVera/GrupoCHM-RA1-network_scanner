@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import subprocess
 import socket
 
@@ -69,3 +70,13 @@ if __name__ == "__main__":
         port_scan(primer_equipo, puertos_a_revisar)
     else:
         print("No se encontraron equipos activos en esta red.")
+=======
+import socket    # Para hablar con otros computadores
+import os        # Para usar el comando 'ping'
+import argparse  # Para que el usuario elija qué IP escanear
+
+# Configuramos el menú de opciones
+parser = argparse.ArgumentParser(description="Escáner de Red - INACAP")
+parser.add_argument("-t", "--target", help="IP a escanear")
+args = parser.parse_args()
+>>>>>>> ab2e002339a82f425667492e78b407b4dfb7cfb7
