@@ -1,49 +1,37 @@
-# 🔍 Network Scanner - Proyecto INACAP (RA1)
+Network Scanner - Grupo CHM
+Herramienta de reconocimiento de red local desarrollada en Python para la detección de hosts y servicios. Proyecto académico para la asignatura de Redes Avanzadas en INACAP.
 
-Este proyecto consiste en un escáner de red local desarrollado en **Python**. La herramienta permite realizar un barrido de red (**Ping Sweep**) para detectar equipos activos y posteriormente ejecutar un **escaneo de puertos TCP** en los dispositivos encontrados.
+Equipo de trabajo
+Hernán Vera: Líder de Proyecto / Gestión de Git.
 
-## 👥 Integrantes y Roles
-El equipo de trabajo está compuesto por:
+Matías Peralta: Desarrollador / Lógica de Sockets.
 
-* **Hernán Vera** - *Líder de Proyecto* (Gestión de repositorio y coordinación).
-* **Matias Peralta** - *Desarrollador* (Implementación de lógica en Python y Sockets).
-* **Claudio Zambra** - *Documentador* (Redacción técnica y manuales de uso).
+Claudio Zambra: Documentación Técnica.
 
----
+Especificaciones Técnicas
+El script opera bajo dos módulos de análisis:
 
-## 🚀 Funcionalidades Principales
-El script utiliza dos métodos fundamentales de reconocimiento de red:
+Ping Sweep: Identificación de hosts activos mediante tráfico ICMP en el segmento de red.
 
-1.  **Barrido ICMP (Ping Sweep):** Utiliza el comando `ping` del sistema operativo para verificar qué direcciones IP responden dentro del rango configurado (1 al 254).
-2.  **Escaneo de Puertos TCP:** Para cada equipo activo detectado, intenta establecer una conexión en puertos críticos:
-    * **21** (FTP)
-    * **22** (SSH)
-    * **80** (HTTP)
-    * **443** (HTTPS)
-3.  **Manejo de Argumentos:** Incluye soporte inicial para seleccionar objetivos mediante la línea de comandos (parámetro `-t`).
+Port Scan: Verificación de disponibilidad en servicios críticos (21, 22, 80, 443) mediante conexiones TCP.
 
-## 🛠️ Requisitos del Sistema
+Requisitos
+Python 3.x
 
-Para que el script funcione correctamente, asegúrate de tener instalado:
+Privilegios de administrador para la gestión de sockets y comandos de red.
 
-1. **Python 3.x**
-2. **Permisos de Administrador:** Necesarios para ejecutar comandos de red y abrir sockets sin restricciones del firewall.
-
-## 📖 Instrucciones de Uso
-
-> [!IMPORTANT]
-> **Limpieza de Código:** Antes de ejecutar, asegúrate de haber resuelto los conflictos de Git (eliminar las marcas `<<<<<<<`, `=======` y `>>>>>>>`) para que el intérprete de Python no lance errores de sintaxis.
-
-### 1. Ejecución Estándar
-Por defecto, el script escaneará el rango de red `192.168.1.x`:
-```bash
-python escaneoredes.py
-2. Uso con Argumentos (En desarrollo)
-El script permite definir un objetivo específico:
+Instrucciones de Ejecución
+Escaneo de red predeterminado (192.168.1.0/24):
 
 Bash
-python escaneoredes.py -t 192.168.1.1
-⚠️ Aviso Legal
-Este software ha sido creado con fines exclusivamente educativos para la asignatura de Redes Avanzadas. El uso de herramientas de escaneo en redes ajenas sin autorización previa puede ser ilegal. El equipo no se responsabiliza por el mal uso de esta herramienta.
+python escaneoredes.py
+Escaneo de host específico:
 
-© 2026 - Grupo CHM - INACAP
+Bash
+python escaneoredes.py -t <IP_OBJETIVO>
+Nota sobre control de versiones: Antes de ejecutar, verifique que el archivo no contenga marcas de conflicto (<<<<<<<, =======).
+
+Aviso Legal
+Software con fines educativos. El uso de esta herramienta en redes sin autorización es responsabilidad exclusiva del usuario.
+
+2026 | INACAP
